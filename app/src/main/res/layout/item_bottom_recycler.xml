@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="modelDrawableAssets"
+            type="com.aiface.aging.shared.editorui.ModelDrawableAssets" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_17sdp"
+        android:onClick="@{clickListener}"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/media_item_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:tint="@color/white"
+            app:loadIntAsDrawable="@{modelDrawableAssets.drawable}" />
+
+        <TextView
+            android:id="@+id/media_item_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center"
+            tools:text="Text"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_gravity="center_horizontal"
+            android:text="@{modelDrawableAssets.imageTitle}"
+            android:textSize="@dimen/_10ssp" />
+
+    </LinearLayout>
+</layout>

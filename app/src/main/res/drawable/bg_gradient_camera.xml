@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base diagonal gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="135"
+                android:startColor="#800E34"
+                android:centerColor="#800E34"
+                android:endColor="#800E34" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+
+    <!-- Center boost -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:centerX="0.5"
+                android:centerY="0.5"
+                android:gradientRadius="160dp"
+                android:startColor="#A6234F"
+                android:endColor="#002E1065" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+
+    <!-- Black corner (bigger + stronger) -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:centerX="1.0"
+                android:centerY="1.0"
+                android:gradientRadius="170dp"
+                android:startColor="#800E34"
+                android:endColor="#00000000" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+</layer-list>

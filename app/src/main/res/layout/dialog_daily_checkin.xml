@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg_checkin_dialog">
+        <ImageView
+            android:id="@+id/btnClose"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:contentDescription="@null"
+            android:padding="@dimen/_6sdp"
+            android:background="@drawable/bg_gradient_oval"
+            android:backgroundTint="@color/grey12"
+            android:src="@drawable/ic_cross"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/text_secondary" />
+
+        <TextView
+            android:id="@+id/tvCheckInLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/daily_checkin_title"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintStart_toEndOf="@+id/btnClose"
+            app:layout_constraintTop_toTopOf="@+id/btnClose" />
+
+        <TextView
+            android:id="@+id/tvStreakDays"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:fontFamily="@font/inter_bold"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintStart_toStartOf="@+id/tvCheckInLabel"
+            app:layout_constraintTop_toBottomOf="@id/tvCheckInLabel"
+            tools:text="4 Days" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCheckInDays"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:clipToPadding="false"
+            android:background="@drawable/rounded_filled_dark_grey"
+            android:backgroundTint="@color/credit_bg"
+            android:nestedScrollingEnabled="false"
+            android:overScrollMode="never"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvStreakDays"
+            tools:itemCount="1"
+            tools:listitem="@layout/item_checkin_day" />
+
+        <TextView
+            android:id="@+id/btnClaim"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/bg_gradient_pill"
+            android:fontFamily="@font/inter_semibold"
+            android:gravity="center"
+            android:text="@string/daily_checkin_claim"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rvCheckInDays" />
+
+        <TextView
+            android:id="@+id/tvGetMoreCoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:fontFamily="@font/inter_medium"
+            android:padding="@dimen/_4sdp"
+            android:text="@string/daily_checkin_get_more"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/_11ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnClaim" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/ivCoinStack"
+        android:layout_width="@dimen/_65sdp"
+        android:layout_height="@dimen/_62sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:contentDescription="@null"
+        android:src="@drawable/coin"
+        app:layout_constraintBottom_toTopOf="@id/top"
+        app:layout_constraintEnd_toEndOf="@+id/top"
+        app:layout_constraintTop_toTopOf="@id/top" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

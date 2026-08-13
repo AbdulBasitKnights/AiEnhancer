@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/adjustLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    android:background="@color/bg_editor"
+    android:paddingBottom="@dimen/_10sdp"
+    >
+
+
+    <ImageView
+        android:id="@+id/btn_cross_border"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:src="@drawable/ic_cross"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/border"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_cross_border"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="@dimen/_12ssp"/>
+
+
+    <ImageView
+        android:id="@+id/btn_tick_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="@id/btn_cross_border"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_tick_24"
+        />
+
+    <TextView
+        android:id="@+id/tv_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/border_size"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="@id/btn_cross_border"
+        app:layout_constraintTop_toBottomOf="@id/btn_cross_border"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="@dimen/_11ssp"/>
+
+    <TextView
+        android:id="@+id/tv_border_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="@id/btn_tick_bg"
+        app:layout_constraintTop_toTopOf="@id/spaceBar"
+        app:layout_constraintBottom_toBottomOf="@id/spaceBar"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="@dimen/_11ssp"/>
+
+    <SeekBar
+        android:id="@+id/spaceBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/btn_cross_border"
+        app:layout_constraintEnd_toStartOf="@id/tv_border_value"
+        app:layout_constraintTop_toBottomOf="@id/tv_size"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:theme="@style/progressBar" />
+
+    <TextView
+        android:id="@+id/tv_round"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/roundness"
+        android:layout_marginStart="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="@id/btn_cross_border"
+        app:layout_constraintTop_toBottomOf="@id/spaceBar"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="@dimen/_11ssp"/>
+
+    <TextView
+        android:id="@+id/tv_round_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="@id/btn_tick_bg"
+        app:layout_constraintTop_toTopOf="@id/cornerBar"
+        app:layout_constraintBottom_toBottomOf="@id/cornerBar"
+        android:textColor="@color/white"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="@dimen/_11ssp"/>
+
+    <SeekBar
+        android:id="@+id/cornerBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/btn_cross_border"
+        app:layout_constraintEnd_toStartOf="@id/tv_border_value"
+        app:layout_constraintTop_toBottomOf="@id/tv_round"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:theme="@style/progressBar" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="@color/bg_editor"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/btn_cross_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+           android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:src="@drawable/ic_cross"
+            />
+
+
+        <ImageView
+            android:id="@+id/btn_tick_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:src="@drawable/ic_tick_24"
+            />
+
+        <RelativeLayout
+            android:id="@+id/fonts_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/textRecycler"
+            android:visibility="gone"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_below="@id/btn_tick_bg"
+           >
+
+            <TextView
+                android:id="@+id/loading_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/inter_medium"
+                android:text="@string/loading_fonts"
+                android:textColor="@color/text_secondary"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fonts_recyclerview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:visibility="gone"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="5" />
+        </RelativeLayout>
+
+        <include
+            android:id="@+id/textColorLayout"
+            layout="@layout/layout_opacity_colors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_above="@id/textRecycler" />
+
+        <include
+            android:id="@+id/textAlignLayout"
+            layout="@layout/layout_textalign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/textRecycler"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_15sdp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/textRecycler"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/_7sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </RelativeLayout>
+</layout>

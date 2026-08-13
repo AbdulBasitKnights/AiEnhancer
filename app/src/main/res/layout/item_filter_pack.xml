@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="itemClickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="modelFilterPack"
+            type="com.aiface.aging.features.filters.model.ModelFilterPack" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        app:cardCornerRadius="5dp"
+        android:onClick="@{itemClickListener}">
+
+        <ImageView
+            android:id="@+id/frame_head_img"
+            android:layout_width="@dimen/bottom_item_width"
+            android:layout_height="@dimen/bottom_item_width"
+            android:adjustViewBounds="true"
+            app:loadBitmapToImage="@{modelFilterPack.bitmap}"/>
+
+        <!--<ImageView
+            android:id="@+id/tagImage"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_alignParentEnd="true"
+            android:clickable="false"
+            android:visibility="gone"
+            android:adjustViewBounds="true"
+            app:framesDao="@{framesDao}" />-->
+    </androidx.cardview.widget.CardView>
+
+</layout>

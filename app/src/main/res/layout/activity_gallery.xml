@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor">
+
+
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_arrow_back"
+        app:tint="@color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_padding_small"
+        android:ellipsize="end"
+        android:textColor="@color/text_primary"
+        android:maxWidth="@dimen/ted_image_picker_album_text_max_width"
+        android:maxLines="1"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintStart_toEndOf="@id/back"
+        app:layout_constraintTop_toTopOf="@id/back"
+        app:layout_constraintBottom_toBottomOf="@id/back"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/Library"
+      />
+
+    <!-- Top Bar -->
+
+    <!--app:title="My Library"
+        app:navigationIcon="@drawable/arrow_back"
+        android:layout_width="0dp"-->
+
+
+    <!-- Segmented Control Track -->
+    <FrameLayout
+        android:id="@+id/segmentTrack"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/bg_library"
+        android:padding="6dp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <!--android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="24dp"-->
+
+        <LinearLayout
+            android:id="@+id/segmentButtons"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/btnPhoto"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/photo"
+                android:fontFamily="@font/inter_medium"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_library"/>
+            <!--android:textColor="@color/black"
+                android:background="@drawable/bg_segment_selected"
+                android:backgroundTint="@color/selected_purple"-->
+
+            <!--<Space
+                android:layout_width="12dp"
+                android:layout_height="match_parent"/>-->
+
+            <TextView
+                android:id="@+id/btnVideo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/video"
+                android:fontFamily="@font/inter_medium"
+                android:textSize="@dimen/_10ssp"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_library"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/emptyState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/segmentTrack"
+        app:layout_constraintBottom_toTopOf="@id/adCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="56dp">
+
+        <ImageView
+            android:id="@+id/emptyImage"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/empty_folder"/>
+        <!--android:tint="@color/white"
+            android:contentDescription="@string/untitled"-->
+
+        <TextView
+            android:id="@+id/emptyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_photo_in_here"
+            android:textColor="@color/textMuted"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/galleryRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/segmentTrack"
+        app:layout_constraintBottom_toTopOf="@id/adCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        android:padding="8dp"
+        android:clipToPadding="false"/>
+
+    <!-- Bottom Ad Card -->
+    <LinearLayout
+        android:id="@+id/adCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_ad_card"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp">
+
+        <!-- Top row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/adLogo"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:src="@drawable/ic_launcher_foreground"
+                android:background="@drawable/bg_segment_unselected"
+                android:padding="6dp"
+                android:contentDescription="@null"/>
+
+            <TextView
+                android:id="@+id/adChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="Ad"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:background="@drawable/bg_ad_chip"/>
+
+        </LinearLayout>
+
+        <!-- Text block -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:id="@+id/adHeadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Limited Seats"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/adLine1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The University of Chenab, Gujrat"
+                android:textStyle="bold"
+                android:textColor="@color/brandYellow"
+                android:textSize="14sp"
+                android:layout_marginTop="2dp"/>
+
+            <TextView
+                android:id="@+id/adLine2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Admissions are Open! Doctor of Physical Therapy ..."
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <!-- CTA -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnApply"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:text="APPLY NOW"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_cta_yellow"/>
+    </LinearLayout>
+
+    <!-- Fragment Container -->
+    <FrameLayout
+        android:id="@+id/fragment_container_library"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

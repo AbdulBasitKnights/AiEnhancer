@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/_58sdp"
+    android:layout_height="@dimen/_58sdp"
+    android:layout_marginEnd="@dimen/_8sdp">
+
+    <ImageView
+        android:id="@+id/ivAppIcon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_iap_card"
+        android:backgroundTint="@color/white"
+        android:contentDescription="@null"
+        android:padding="@dimen/_4sdp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/vc_changer" />
+
+</FrameLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+
+    android:background="@drawable/bg_dialog_exit"
+    android:padding="@dimen/_5sdp">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/discard_changes"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/_20ssp" />
+
+    <TextView
+        android:id="@+id/inputEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:focusable="true"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center_horizontal"
+        android:maxLines="2"
+        android:text="@string/any_unsaved_changes_will_be_lost_are_you_sure_you_want_to_proceed"
+        android:textColor="#A5A5A5"
+        android:textSize="@dimen/_12ssp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_below="@id/inputEditText"
+        android:layout_margin="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/buttonCancel"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@drawable/bg_selected_btn"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center"
+            android:text="@string/not_now"
+            android:textAllCaps="false"
+            android:textColor="@color/lineColor"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide" />
+
+        <TextView
+            android:id="@+id/buttonDiscard"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@drawable/bg_unselected_btn"
+            android:backgroundTint="@color/bg_editor_secondary"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center"
+            android:text="@string/discard"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toStartOf="@id/guide"
+            app:layout_constraintStart_toEndOf="@id/buttonCancel"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <com.ikame.android.sdk.widgets.IkmWidgetAdView-->
+<!--        android:id="@+id/adView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:ikwad_preview_layout="@layout/shimmer_loading_native"-->
+<!--        android:layout_below="@id/cl"/>-->
+    <FrameLayout
+        android:id="@+id/flAdplace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cl"
+        android:visibility="gone" />
+</RelativeLayout>

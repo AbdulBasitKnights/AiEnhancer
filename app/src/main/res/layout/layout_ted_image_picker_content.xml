@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.net.Uri" />
+
+        <import type="com.aiface.aging.features.imgpicker.builder.type.SelectType" />
+
+        <variable
+            name="selectType"
+            type="com.aiface.aging.features.imgpicker.builder.type.SelectType" />
+
+        <variable
+            name="items"
+            type="java.util.List&lt;Uri&gt;" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/view_selected_media"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/ted_image_picker_selected_view_height"
+            android:background="@color/home_card_bg">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_selected_media"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="@{selectType == SelectType.MULTI}"
+                app:diffCallback="@{true}"
+                app:replaceAll="@{items}" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_media"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never"
+                android:background="@color/bgColor"
+                android:visibility="invisible"
+                tools:listitem="@layout/item_gallery_media"
+                tools:visibility="visible" />
+
+            <com.aiface.aging.features.imgpicker.base.FastScroller
+                android:id="@+id/fast_scroller"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:layout_gravity="end" />
+        </FrameLayout>
+    </LinearLayout>
+</layout>

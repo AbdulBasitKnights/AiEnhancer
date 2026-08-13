@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="@dimen/_16sdp"
+    android:paddingBottom="@dimen/_16sdp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivPromoBg"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_120sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_remover_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedImage16" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_home_promo_scrim"
+        app:layout_constraintBottom_toBottomOf="@id/ivPromoBg"
+        app:layout_constraintEnd_toEndOf="@id/ivPromoBg"
+        app:layout_constraintStart_toStartOf="@id/ivPromoBg"
+        app:layout_constraintTop_toTopOf="@id/ivPromoBg" />
+
+    <TextView
+        android:id="@+id/tvPromoTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_14sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_14sdp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/home_promo_eraser_title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        app:layout_constraintEnd_toEndOf="@id/ivPromoBg"
+        app:layout_constraintStart_toStartOf="@id/ivPromoBg"
+        app:layout_constraintTop_toTopOf="@id/ivPromoBg" />
+
+    <TextView
+        android:id="@+id/tvPromoSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/home_promo_eraser_subtitle"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintEnd_toEndOf="@id/tvPromoTitle"
+        app:layout_constraintStart_toStartOf="@id/tvPromoTitle"
+        app:layout_constraintTop_toBottomOf="@id/tvPromoTitle" />
+
+    <TextView
+        android:id="@+id/btnPromoCta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_14sdp"
+        android:background="@drawable/bg_gradient_pill"
+        android:fontFamily="@font/inter_semibold"
+        android:paddingHorizontal="@dimen/_12sdp"
+        android:paddingVertical="@dimen/_6sdp"
+        android:text="@string/home_promo_eraser_cta"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintBottom_toBottomOf="@id/ivPromoBg"
+        app:layout_constraintStart_toStartOf="@id/tvPromoTitle"
+        tools:text="Let's Remove" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

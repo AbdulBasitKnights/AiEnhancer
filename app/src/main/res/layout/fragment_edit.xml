@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/_25sdp"
+    android:background="@color/white"
+    >
+
+    <!-- Top Bar -->
+    <ImageView
+        android:id="@+id/btnBackEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:padding="@dimen/_8sdp"
+        android:src="@drawable/ic_arrow_back"
+        app:tint="@color/text_primary"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:text="@string/preview_template_name"
+        android:textColor="@color/text_primary"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:textSize="15sp"
+       android:fontFamily="@font/inter_semibold"
+        app:layout_constraintStart_toEndOf="@+id/btnBackEdit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_credits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBackEdit"
+        app:layout_constraintBottom_toBottomOf="@id/btnBackEdit"
+        android:textColor="@color/white"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@drawable/bg_gradient_pill"
+        android:fontFamily="@font/inter_medium"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:drawableStart="@drawable/ic_gemini_star_"
+        android:drawablePadding="5dp"
+        android:paddingVertical="@dimen/_5sdp"
+        android:text="0"
+        android:textSize="@dimen/_10ssp" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageEditPreview"
+        android:layout_width="@dimen/_140sdp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/CircleImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvPrompt"
+        app:layout_constraintTop_toBottomOf="@id/btnBackEdit"
+        tools:src="@drawable/im_ob1" />
+
+    <LinearLayout
+        android:id="@+id/llDualImagePreview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/tvPrompt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBackEdit"
+        tools:visibility="visible">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageEditPreviewOne"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/_6sdp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircleImage"
+            tools:src="@drawable/im_ob1" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageEditPreviewTwo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/CircleImage"
+            tools:src="@drawable/im_ob1" />
+    </LinearLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:visibility="gone"
+        android:id="@+id/imageEditPreviewEnhancer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginVertical="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/CircleImage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tvPrompt"
+        app:layout_constraintTop_toBottomOf="@id/btnBackEdit"
+        tools:src="@drawable/im_ob1" />
+
+    <TextView
+        android:id="@+id/tvPrompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/edittext"
+        android:layout_marginBottom="@dimen/_5sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/inter_semibold"
+        android:textSize="@dimen/_14ssp"
+        android:textColor="@color/text_primary"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:text="Template Prompt"/>
+
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_130sdp"
+        android:padding="@dimen/_8sdp"
+        android:textColor="@color/text_primary"
+        tools:text="prompt will be here jdflkjd dlkfjd fdj "
+        android:gravity="top"
+        android:textSize="@dimen/_10ssp"
+        android:fontFamily="@font/inter_regular"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:inputType="textMultiLine"
+        android:background="@drawable/bg_stroke"
+        app:layout_constraintBottom_toTopOf="@id/btnCreate"
+        android:layout_marginHorizontal="@dimen/_25sdp"/>
+
+
+    <TextView
+        android:id="@+id/tvAgingSelectHint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_6sdp"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/aging_select_template"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/rvAgingTemplates"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageEditPreviewEnhancer" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAgingTemplates"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/btnCreate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/item_aging_template" />
+
+    <!-- Create Button -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btnCreate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:background="@drawable/bg_gradient_pill"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:paddingVertical="@dimen/_12sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/clAd"
+        >
+
+
+        <TextView
+            android:id="@+id/tvGenerate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:text="@string/generate"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            android:textStyle="bold" />
+<!--
+        <TextView
+            android:id="@+id/watchAd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/watch_an_ad"
+            android:fontFamily="@font/inter_regular"
+            android:textSize="@dimen/_9ssp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/tvGenerate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/ivWatchAd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="@id/tvGenerate"
+            app:layout_constraintTop_toTopOf="@id/tvGenerate"
+            app:layout_constraintBottom_toBottomOf="@id/watchAd"
+            android:src="@drawable/ic_watch_ad_"
+            android:layout_marginEnd="@dimen/_10sdp"/>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray01"
+        android:padding="@dimen/_5sdp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <FrameLayout
+            android:id="@+id/shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/shimmer_container_native"
+                layout="@layout/layout_loading_ads_native_small" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/nativeAdView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:left="3dp"
+        android:right="3dp"
+        android:top="3dp"
+        android:bottom="3dp">
+        <shape>
+            <gradient
+                android:startColor="#9259DC"
+                android:endColor="#6A4FFE"
+                android:angle="360"
+                android:gradientRadius="0.7"
+                android:type="linear" />
+            <corners android:radius="@dimen/_20sdp" /> <!-- Reduce radius to account for stroke -->
+        </shape>
+    </item>
+</layer-list>

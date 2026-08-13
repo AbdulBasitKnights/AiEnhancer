@@ -1,0 +1,171 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.ProCapture" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="android:colorBackground">@color/bgColor</item>
+        <item name="colorSurface">@color/bgColor</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:statusBarColor">@color/bgColor</item>
+        <item name="android:navigationBarColor">@color/bgColor</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+        <item name="android:forceDarkAllowed">false</item>
+    </style>
+
+    <style name="appIconTintColor">
+        <item name="android:tint">@color/text_secondary</item>
+    </style>
+
+    <style name="outlineTintColor">
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
+
+    <style name="appIconTintColorLightToDarkHighlight">
+        <item name="android:tint">@color/colorHighlightBlueDark</item>
+    </style>
+
+    <style name="appBgTintColor">
+        <item name="android:backgroundTint">@color/grey12</item>
+    </style>
+
+    <style name="Theme.ProCapture" parent="Base.Theme.ProCapture" />
+
+    <style name="Theme.MyLibrary" parent="AppTheme">
+        <item name="android:statusBarColor">@color/bgColor</item>
+        <item name="android:navigationBarColor">@color/bgColor</item>
+        <item name="android:windowBackground">@color/bgColor</item>
+        <item name="materialButtonStyle">@style/Widget.MyLibrary.SegmentedButton</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+        <item name="android:enforceNavigationBarContrast">false</item>
+        <item name="android:enforceStatusBarContrast">false</item>
+    </style>
+
+    <style name="Widget.HDCam.LinearProgressIndicator" parent="Widget.MaterialComponents.LinearProgressIndicator">
+        <item name="indicatorColor">@color/indicatorColor</item>
+        <item name="trackColor">@color/trackColor</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
+        <item name="linearProgressIndicatorStyle">@style/Widget.HDCam.LinearProgressIndicator</item>
+        <item name="android:statusBarColor">@color/bgColor</item>
+        <item name="android:navigationBarColor">@color/bgColor</item>
+        <item name="android:windowBackground">@color/bgColor</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
+        <item name="android:forceDarkAllowed">false</item>
+        <item name="materialButtonStyle">@style/Widget.MyLibrary.SegmentedButton</item>
+    </style>
+
+    <style name="Widget.MyLibrary.SegmentedButton" parent="Widget.Material3.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">28dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="backgroundTint">@color/blue</item>
+        <item name="rippleColor">@color/selected_purple</item>
+    </style>
+
+    <style name="CustomTabText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/urbanist_semibold</item>
+    </style>
+
+    <style name="tabStyle">
+        <item name="tabIndicatorColor">@color/black</item>
+        <item name="tabSelectedTextColor">@color/black</item>
+        <item name="tabTextColor">@color/black</item>
+    </style>
+
+    <style name="progressBar" parent="Widget.AppCompat.SeekBar">
+        <item name="android:progressBackgroundTint">@color/grey12</item>
+        <item name="android:progressTint">@color/colorIAPHighlight</item>
+        <item name="android:thumbTint">@color/colorIAPHighlight</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="@style/ThemeOverlay.AppCompat.Light" />
+
+    <style name="AlertDialogCustom1" parent="@style/Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:colorAccent">@color/black</item>
+        <item name="colorPrimary">@color/black</item>
+    </style>
+
+    <style name="AdsAppTheme" parent="Theme.AppCompat.Light" />
+
+    <style name="AppTheme.Ads" parent="@style/AdsAppTheme">
+        <item name="android:textSize">11.0sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:background">@drawable/ads_icon</item>
+        <item name="android:paddingLeft">3.0dip</item>
+        <item name="android:paddingRight">6.0dip</item>
+        <item name="android:paddingBottom">1.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">15.0px</item>
+        <item name="android:minHeight">15.0px</item>
+        <item name="android:text">Ad</item>
+    </style>
+
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="Theme.Lockscreen" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="CircleImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">6%</item>
+    </style>
+
+    <style name="CircleImageFull">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="RoundedImage16">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ResultImageRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+    </style>
+
+    <style name="BottomSheetDialogTheme" parent="Theme.Material3.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalBottomSheetStyle</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/white</item>
+    </style>
+
+    <style name="AppModalBottomSheetStyle" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="shapeAppearanceOverlay">@style/AppBottomSheetShape</item>
+        <item name="backgroundTint">@android:color/white</item>
+    </style>
+
+    <style name="AppBottomSheetShape" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+</resources>

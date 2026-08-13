@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.aiface.aging.features.imgpicker.builder.type.SelectType" />
+
+        <variable
+            name="media"
+            type="com.aiface.aging.features.imgpicker.model.Media" />
+
+        <variable
+            name="isSelected"
+            type="boolean" />
+
+        <variable
+            name="selectedNumber"
+            type="int" />
+
+        <variable
+            name="selectType"
+            type="com.aiface.aging.features.imgpicker.builder.type.SelectType" />
+
+        <variable
+            name="showZoom"
+            type="boolean" />
+
+        <variable
+            name="showDuration"
+            type="boolean" />
+
+        <variable
+            name="duration"
+            type="String" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/_5sdp"
+        android:layout_margin="@dimen/_2sdp"
+        app:cardCornerRadius="@dimen/_5sdp"
+        tools:layout_height="100dp"
+        tools:layout_width="100dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                bind:imageUri="@{media.uri}" />
+
+<!--            <FrameLayout-->
+<!--                android:id="@+id/view_zoom_out"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="@dimen/default_padding_xsmall"-->
+<!--                android:padding="@dimen/default_padding_xsmall"-->
+<!--                android:clickable="@{!isSelected}"-->
+<!--                android:visibility="@{showZoom}"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/ted_image_picker_zoom_size"-->
+<!--                    android:layout_height="@dimen/ted_image_picker_zoom_size"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:background="@color/ted_image_picker_zoom_background"-->
+<!--                    android:src="@drawable/ic_zoom_out_24dp" />-->
+<!--            </FrameLayout>-->
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_padding_small"
+                android:background="@color/black_54"
+                android:padding="@dimen/default_padding_xsmall"
+                android:text="@{duration}"
+                android:textColor="@color/white"
+                android:visibility="@{showDuration}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="00:11" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="@{selectType == SelectType.MULTI}"
+                app:layout_constraintBottom_toBottomOf="@id/iv_image"
+                app:layout_constraintEnd_toEndOf="@id/iv_image"
+                app:layout_constraintStart_toStartOf="@id/iv_image"
+                app:layout_constraintTop_toTopOf="@id/iv_image">
+
+              <!-- android:background="@drawable/squared_border_transparent"-->
+                <View
+                    android:id="@+id/selctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                android:background="@color/ted_image_picker_selected_foreground"
+                android:visibility="@{isSelected}"
+                    />
+
+                <!-- android:text="@{isSelected? String.valueOf(selectedNumber) : ``}"-->
+                <!-- android:background="@{isSelected? @drawable/bg_multi_image_selected : @drawable/bg_multi_image_unselected}"-->
+                <TextView
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="@dimen/list_item_avatar_size_small"
+                    android:layout_height="@dimen/list_item_avatar_size_small"
+                    android:layout_gravity="end"
+                    android:layout_margin="@dimen/default_padding_small"
+                    android:background="@{isSelected? @drawable/ic_tick_selected : null}"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    tools:background="@drawable/ic_tick_selected"
+                    />
+            </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

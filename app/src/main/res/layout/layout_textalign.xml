@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/adjustTextAlignmentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="20dp"
+    android:visibility="gone">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvTextSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_medium"
+            android:text="@string/size"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/_10ssp" />
+
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/textSizeSeek"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_toEndOf="@id/tvTextSize"
+            android:visibility="visible"
+            android:layout_marginEnd="@dimen/_20sdp"
+            app:bsb_thumb_radius="10dp"
+            app:bsb_hide_bubble="true"
+            app:bsb_bubble_color="@color/colorHighlightBlueDark"
+            app:bsb_second_track_color="@color/colorHighlightBlueDark"
+            app:bsb_section_count="1"
+            app:bsb_show_section_mark="true"
+            app:bsb_track_color="@color/gray" />
+
+        <TextView
+            android:id="@+id/tvLetterSpace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bsb_hide_bubble="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_below="@id/tvTextSize"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/inter_medium"
+            android:text="@string/space"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/_10ssp" />
+
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/letterSpaceSeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTextSize"
+            app:bsb_thumb_radius="10dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_toEndOf="@+id/tvLetterSpace"
+            app:bsb_hide_bubble="true"
+            android:visibility="visible"
+            app:bsb_bubble_color="@color/colorHighlightBlueDark"
+            app:bsb_max="3"
+            app:bsb_min="0"
+            app:bsb_second_track_color="@color/colorHighlightBlueDark"
+            app:bsb_section_count="1"
+            app:bsb_show_section_mark="true"
+            app:bsb_track_color="@color/gray" />
+    </RelativeLayout>
+</RelativeLayout>

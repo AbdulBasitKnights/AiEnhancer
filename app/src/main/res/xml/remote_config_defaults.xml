@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<defaultsMap>
+    <entry>
+        <key>native_setting</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>native_setting_hf</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>native_share_screen</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>native_share_screen_hf</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>native_home</key>
+        <value>true</value>
+    </entry>
+    <entry>
+        <key>native_home_hf</key>
+        <value>true</value>
+    </entry>
+</defaultsMap>

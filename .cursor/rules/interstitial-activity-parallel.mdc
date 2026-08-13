@@ -1,0 +1,18 @@
+---
+description: Activity interstitial must navigate in parallel with ad show — never wait for dismiss
+alwaysApply: true
+---
+
+# Interstitial + Activity navigation
+
+When an interstitial is shown around **Activity → Activity** navigation:
+
+1. **Start the next Activity in parallel with showing the ad** (`forFragment = false`).
+2. Call `onContinue` / `startActivity` **before or with** `ad.show()`, NOT after dismiss.
+3. **Do not `finish()` the current Activity in `onContinue`** — that kills the ad.
+4. Finish the host **after** ad dismiss / fail / skip (see `showHomeInterstitialThen`).
+5. Use `ResultLauncher.openLocalPreview(..., finishHost = false)` when opening Preview from that helper.
+
+Fragment → Fragment hops use `forFragment = true` (continue after ad is on screen).
+
+Rewarded ads stay only on API image-generation unlock flows — never on offline editor Next.

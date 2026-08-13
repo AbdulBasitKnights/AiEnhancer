@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:backgroundTint="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingVertical="@dimen/_15sdp"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/tv_thanks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_medium"
+            android:text="@string/thanks_using"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/text_primary"
+            android:layout_marginTop="@dimen/_10sdp"
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintTop_toTopOf="parent"
+            />
+
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_regular"
+            android:text="@string/we_hope"
+            android:textSize="@dimen/_11ssp"
+            android:textAlignment="center"
+            android:textColor="@color/text_secondary"
+            ads:layout_constraintStart_toStartOf="parent"
+            ads:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintTop_toBottomOf="@id/tv_thanks"
+            />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clApps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:background="@drawable/bg_rectangled_cl"
+            android:backgroundTint="@color/grey12"
+            ads:layout_constraintTop_toBottomOf="@id/tv_des"
+            android:layout_marginTop="@dimen/_40sdp">
+
+            <TextView
+                android:id="@+id/tvSponsered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:layout_constraintStart_toStartOf="parent"
+                ads:layout_constraintTop_toTopOf="parent"
+                android:layout_margin="@dimen/_10sdp"
+                android:text="Sponsered"
+                android:textColor="@color/colorIAPHighlight"
+                android:fontFamily="@font/inter_bold"
+                android:textSize="@dimen/_14ssp"/>
+            <TextView
+                android:id="@+id/tvApps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:layout_constraintStart_toEndOf="@id/tvSponsered"
+                ads:layout_constraintTop_toTopOf="@id/tvSponsered"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="Apps"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/inter_bold"
+                android:textSize="@dimen/_14ssp"/>
+
+            <TextView
+                android:id="@+id/tvDiscover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:layout_constraintStart_toStartOf="@id/tvSponsered"
+                ads:layout_constraintTop_toBottomOf="@id/tvSponsered"
+                android:text="Discover trending apps you’ll love"
+                android:textColor="#838383"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="@dimen/_11ssp"/>
+
+
+            <ImageView
+                android:id="@+id/zm"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:src="@drawable/ut_zm"
+                android:backgroundTint="@color/gray02"
+                android:background="@drawable/bg_iap_card"
+                ads:layout_constraintStart_toStartOf="@id/tvSponsered"
+                ads:layout_constraintTop_toBottomOf="@id/tvDiscover"
+                android:layout_marginTop="@dimen/_20sdp"/>
+
+            <ImageView
+                android:id="@+id/vc"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:src="@drawable/ut_vc"
+                android:backgroundTint="@color/gray02"
+                android:background="@drawable/bg_iap_card"
+                ads:layout_constraintEnd_toStartOf="@id/clap"
+                ads:layout_constraintStart_toEndOf="@id/zm"
+                ads:layout_constraintTop_toBottomOf="@id/tvDiscover"
+                android:layout_marginTop="@dimen/_20sdp"/>
+
+            <ImageView
+                android:id="@+id/clap"
+                android:layout_width="@dimen/_55sdp"
+                android:layout_height="@dimen/_55sdp"
+                android:src="@drawable/ut_clap"
+                android:visibility="gone"
+                android:backgroundTint="@color/gray02"
+                android:background="@drawable/bg_iap_card"
+                ads:layout_constraintStart_toEndOf="@id/vc"
+                ads:layout_constraintEnd_toEndOf="parent"
+                ads:layout_constraintTop_toBottomOf="@id/tvDiscover"
+                android:layout_marginTop="@dimen/_20sdp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clbottom"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_5sdp"
+            app:layout_constraintHeight_percent=".40"
+            ads:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <FrameLayout
+                android:id="@+id/shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <include
+                    android:id="@+id/shimmer_container_native"
+                    layout="@layout/layout_loading_ads_native_large" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:visibility="gone"
+                android:id="@+id/nativeAdView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ads:layout_constraintGuide_percent=".5"
+            android:orientation="vertical"
+            android:id="@+id/guide"/>
+
+        <TextView
+            android:id="@+id/btn_quit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_medium"
+            android:text="@string/exit"
+           ads:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_13ssp"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:gravity="center"
+            android:background="@drawable/rounded_filled_dark_blue_ad2"
+            android:paddingVertical="@dimen/_7sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            ads:layout_constraintStart_toEndOf="@id/guide"
+            />
+
+
+        <TextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_medium"
+            android:text="@string/cancel"
+            ads:layout_constraintTop_toTopOf="@id/btn_quit"
+            android:textColor="@color/colorIAPHighlight"
+            android:textSize="@dimen/_13ssp"
+            android:gravity="center"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:background="@drawable/bg_rounded_cancel"
+            android:paddingVertical="@dimen/_7sdp"
+            app:layout_constraintEnd_toStartOf="@id/guide"
+            ads:layout_constraintStart_toStartOf="parent"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home_24"
+        android:title="@string/home"
+        android:enabled="true"
+        app:cnb_backgroundColor="@color/colorIAPHighlight"
+        app:cnb_iconColor="@color/white"/>
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_camera"
+        android:title="@string/camera"
+        app:cnb_backgroundColor="@color/colorIAPHighlight"
+        app:cnb_iconColor="@color/white"/>
+    <item
+        android:id="@+id/nanoFragment"
+        android:icon="@drawable/ic_tools_24"
+        android:title="@string/tools"
+        app:cnb_backgroundColor="@color/colorIAPHighlight"
+        app:cnb_iconColor="@color/white"/>
+
+</menu>

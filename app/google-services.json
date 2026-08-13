@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "81600885108",
+    "project_id": "ai-face-aging-tflsig",
+    "storage_bucket": "ai-face-aging-tflsig.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81600885108:android:8287b8b5f324c543f6bc21",
+        "android_client_info": {
+          "package_name": "ai.faceaging.aiphoto.generator.editor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiULTzFoppZg7TkazSdK9VCa3HaOcbHoo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

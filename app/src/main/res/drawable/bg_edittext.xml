@@ -1,0 +1,8 @@
+<!-- res/drawable/edittext_border.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Focused state: border color when the EditText is focused -->
+    <item android:state_focused="true" android:drawable="@drawable/edittext_border_selected" />
+
+    <!-- Default state: border color when the EditText is not focused -->
+    <item android:drawable="@drawable/edittext_border_default" />
+</selector>

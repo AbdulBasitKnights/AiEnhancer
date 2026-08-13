@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/_5sdp"
+    android:background="@drawable/dialog_bg_white"
+    android:padding="@dimen/_5sdp">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/inter_medium"
+        android:text="@string/add_text"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/_13ssp" />
+
+    <EditText
+        android:id="@+id/inputEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleText"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:background="@drawable/outline_theme_dark"
+        android:focusable="true"
+        android:textColor="@color/text_primary"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:hint="@string/your_text_here"
+        android:textColorHint="@color/gray"
+        android:imeActionLabel="Done"
+        android:imeOptions="actionDone"
+        android:maxLines="5"
+        android:padding="@dimen/_15sdp"
+        android:textSize="@dimen/_11ssp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/inputEditText"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/cancel"
+            android:fontFamily="@font/inter_medium"
+            android:textSize="@dimen/_11ssp"
+            android:textAllCaps="false"
+            android:textColor="@color/text_secondary"
+            android:background="@color/transparent"
+            android:layout_marginEnd="@dimen/_10sdp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonOk"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/done"
+            android:fontFamily="@font/inter_medium"
+            android:textSize="@dimen/_11ssp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:background="@drawable/rounded_filled_dark_grey"
+            android:layout_marginStart="@dimen/_10sdp" />
+    </LinearLayout>
+
+</RelativeLayout>

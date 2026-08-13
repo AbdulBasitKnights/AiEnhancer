@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="modelRatio"
+            type="com.aiface.aging.shared.editorui.ModelRatio" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_6sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:onClick="@{clickListener}"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/media_item_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rat_bg_1_1"
+            app:loadIntAsDrawable="@{modelRatio.background}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+         />
+
+        <ImageView
+            android:id="@+id/media_item_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rat_insta_1_1"
+            app:loadIntAsDrawable="@{modelRatio.drawable}"
+            app:layout_constraintStart_toStartOf="@id/media_item_container"
+            app:layout_constraintEnd_toEndOf="@id/media_item_container"
+            app:layout_constraintTop_toTopOf="@id/media_item_container"
+            app:layout_constraintBottom_toBottomOf="@id/media_item_container"/>
+
+        <TextView
+            android:id="@+id/media_item_text"
+            android:textColor="@color/text_secondary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_medium"
+            app:layout_constraintTop_toBottomOf="@id/media_item_container"
+            app:layout_constraintStart_toStartOf="@id/media_item_container"
+            app:layout_constraintEnd_toEndOf="@id/media_item_container"
+            tools:text="Text"
+            android:text="@{modelRatio.imageTitle}"
+            android:textSize="@dimen/_9ssp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgColor">
+
+        <TextView
+            android:id="@+id/tvToolsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:fontFamily="@font/inter_bold"
+            android:text="@string/tools"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnPro"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:contentDescription="@string/tools"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/tools_premium"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tvToolsTitle"
+            app:layout_constraintEnd_toStartOf="@id/btnSetting"
+            app:layout_constraintTop_toTopOf="@id/tvToolsTitle" />
+
+        <ImageView
+            android:id="@+id/btnSetting"
+            android:layout_width="@dimen/_38sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:contentDescription="@string/settings"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/tools_setting"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/tvToolsTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvToolsTitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTools"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="true"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingBottom="@dimen/_72sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvToolsTitle"
+            app:spanCount="2"
+            tools:listitem="@layout/item_tools" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

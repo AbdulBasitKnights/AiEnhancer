@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent"
+    android:paddingEnd="@dimen/_6sdp"
+    android:paddingStart="@dimen/_16sdp"
+    android:paddingBottom="@dimen/_8sdp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivHeroSlide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.43"
+        app:shapeAppearanceOverlay="@style/RoundedImage16"
+        tools:src="@drawable/top_slider_1" />
+
+    <TextView
+        android:id="@+id/tvHeroTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:fontFamily="@font/inter_semibold"
+        android:text="@string/meet_your_future"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_17ssp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toStartOf="@id/ivHeroSlide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHeroSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:fontFamily="@font/inter_regular"
+        android:text="@string/ai_predicts_your_age"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_11ssp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/ivHeroSlide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeroTitle" />
+
+    <LinearLayout
+        android:id="@+id/btnHeroCta"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/bg_home_hero_cta"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHeroSubtitle">
+
+        <TextView
+            android:id="@+id/tvHeroCta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_semibold"
+            android:text="@string/see_my_future"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_11ssp"
+            android:textStyle="bold"
+            tools:text="See my Future" />
+
+        <ImageView
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:contentDescription="@null"
+            android:src="@drawable/arrow_right"
+            app:tint="@color/white" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

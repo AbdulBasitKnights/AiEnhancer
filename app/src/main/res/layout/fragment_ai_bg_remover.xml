@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:background="@color/bg_editor"
+        android:visibility="visible">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancelErasing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:fontFamily="@font/inter_medium"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/colorHighlightBlueDark"
+            android:textSize="@dimen/_12ssp"
+            android:visibility="gone"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintHorizontal_bias="0.05"
+            ads:layout_constraintLeft_toLeftOf="parent"
+            ads:layout_constraintRight_toRightOf="parent"
+            ads:layout_constraintTop_toTopOf="parent"
+            ads:layout_constraintVertical_bias="0.02" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/actionbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_33sdp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/menuIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:src="@drawable/ic_arrow_back"
+                ads:layout_constraintBottom_toBottomOf="parent"
+                ads:layout_constraintLeft_toLeftOf="parent"
+                ads:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/text_primary" />
+
+            <TextView
+                android:id="@+id/featureText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:fontFamily="@font/inter_bold"
+                android:maxLength="15"
+                android:text="@string/gallery"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/_21ssp"
+                ads:layout_constraintBottom_toBottomOf="parent"
+                ads:layout_constraintHorizontal_bias="0.08"
+                ads:layout_constraintLeft_toRightOf="@id/menuIcon"
+                ads:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/gallery" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintDimensionRatio="2:3"
+            ads:layout_constraintTop_toBottomOf="@id/actionbarLayout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                ads:layout_constraintBottom_toBottomOf="parent"
+                ads:layout_constraintTop_toTopOf="parent">
+
+                <com.aiface.aging.utils.CustomImageView
+                    android:id="@+id/eraseUserImageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    ads:layout_constraintBottom_toBottomOf="parent"
+                    ads:layout_constraintEnd_toEndOf="parent"
+                    ads:layout_constraintStart_toStartOf="parent"
+                    ads:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                 <com.airbnb.lottie.LottieAnimationView
+                     android:id="@+id/animationProcessing"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_centerHorizontal="true"
+                     app:lottie_autoPlay="true"
+                     app:lottie_loop="true"
+                     android:visibility="gone"
+                     app:lottie_rawRes="@raw/image_processing" />
+
+<!--            <ImageView-->
+<!--                android:id="@+id/animationProcessing"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:scaleType="fitXY"-->
+<!--                android:visibility="gone" />-->
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationProcessed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:visibility="gone"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/image_processed" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

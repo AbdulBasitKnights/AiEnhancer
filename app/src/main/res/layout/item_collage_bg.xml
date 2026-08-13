@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="modelDrawableAssets"
+            type="com.aiface.aging.shared.editorui.ModelDrawableAssets" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:backgroundTint="@color/colorHighlightBlueDark"
+        android:layout_width="@dimen/bottom_item_width"
+        android:layout_height="@dimen/bottom_item_width"
+        android:layout_marginHorizontal="@dimen/_3sdp"
+        android:onClick="@{clickListener}"
+        app:cardCornerRadius="@dimen/_8sdp"
+        app:cardElevation="0dp"
+       >
+
+        <ImageView
+            android:id="@+id/ivCollageBg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            app:loadIntAsDrawable="@{modelDrawableAssets.drawable}" />
+
+    </androidx.cardview.widget.CardView>
+</layout>

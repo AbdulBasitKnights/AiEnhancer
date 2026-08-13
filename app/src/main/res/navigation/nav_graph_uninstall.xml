@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/uninstall_main"
+    android:id="@+id/nav_graph_uninstall">
+
+
+    <fragment
+        android:id="@+id/uninstall_main"
+        android:name="com.aiface.aging.features.uninstall.ShortcutUninstallMainFragment"
+        android:label="My Work"
+        tools:layout="@layout/fragment_uninstall_main">
+        <action
+            android:id="@+id/action_unstall_to_questions"
+            app:destination="@id/uninstallSubFragment"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/uninstallSubFragment"
+        android:name="com.aiface.aging.features.uninstall.ShortcutUninstallSubFragment"
+        tools:layout="@layout/fragment_uninstall_sub"/>
+
+</navigation>

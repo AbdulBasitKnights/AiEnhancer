@@ -1,0 +1,15 @@
+# Built from ProCapture-Studio for Ai Face Aging (gallery-only).
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build
+**/build/
+/captures
+.externalNativeBuild
+.cxx
+*.apk
+*.ap_
+*.aab
+.kotlin/

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/clAd">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back"
+                android:padding="@dimen/_5sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+               />
+
+            <!-- Home Icon -->
+            <ImageView
+                android:id="@+id/ivHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_home_new"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Illustration -->
+            <ImageView
+                android:id="@+id/ivIllustration"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/sad_emoji_90"
+                app:layout_constraintTop_toBottomOf="@+id/ivBack"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/we_re_truly_sorry"
+                android:fontFamily="@font/inter_bold"
+                android:textSize="@dimen/_18ssp"
+                android:textColor="@color/text_primary"
+                app:layout_constraintTop_toBottomOf="@+id/ivIllustration"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" />
+
+
+            <TextView
+                android:id="@+id/tvSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/what_issues_experiencing"
+                android:textSize="@dimen/_12ssp"
+                android:gravity="center_horizontal"
+                android:fontFamily="@font/inter_regular"
+                android:textColor="@color/text_secondary"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="4dp" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llReason1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_rounded_constraintlayout"
+                android:backgroundTint="#F2F2F2"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubtitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_remove"
+                    app:layout_constraintTop_toTopOf="@id/btn_remove"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_remove"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/text_primary"
+                    android:scrollbarSize="@dimen/_13ssp"
+                    android:text="@string/too_many_ads"
+                    android:textSize="@dimen/_13ssp" />
+
+                <TextView
+                    android:id="@+id/btn_remove"
+                    android:layout_width="@dimen/_80sdp"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/try_again"
+                    android:background="@drawable/rounded_border_white"
+                    android:backgroundTint="@color/colorHighlightBlueDark"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llReason2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_rounded_constraintlayout"
+                android:backgroundTint="#F2F2F2"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/llReason1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_update"
+                    app:layout_constraintTop_toTopOf="@id/btn_update"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_update"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/text_primary"
+                    android:scrollbarSize="@dimen/_13ssp"
+                    android:text="@string/limited_reatures"
+                    android:textSize="@dimen/_13ssp" />
+
+                <TextView
+                    android:id="@+id/btn_update"
+                    android:layout_width="@dimen/_80sdp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_more"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/rounded_border_white"
+                    android:backgroundTint="@color/colorHighlightBlueDark"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/llReason3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/bg_rounded_constraintlayout"
+                android:backgroundTint="#F2F2F2"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/llReason2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/inter_medium"
+                    android:textColor="@color/text_primary"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/btn_enhance"
+                    app:layout_constraintTop_toTopOf="@id/btn_enhance"
+                    app:layout_constraintBottom_toBottomOf="@id/btn_enhance"
+                    android:scrollbarSize="@dimen/_13ssp"
+                    android:text="@string/quality_of_enhanced_photos_is_bad"
+                    android:textSize="@dimen/_13ssp" />
+
+                <TextView
+                    android:id="@+id/btn_enhance"
+                    android:layout_width="@dimen/_80sdp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enhance"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/rounded_border_white"
+                    android:backgroundTint="@color/colorHighlightBlueDark"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/white" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/btnDontUninstall"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_40sdp"
+                android:fontFamily="@font/inter_semibold"
+                android:background="@drawable/bg_circled_cl"
+                android:backgroundTint="@color/colorIAPHighlight"
+                android:text="@string/don_t_uninstall_yet"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintTop_toBottomOf="@+id/llReason3"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_30sdp"/>
+
+
+            <TextView
+                android:id="@+id/tvUninstallAnyway"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/still_want_to_uninstall"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/_14ssp"
+                android:fontFamily="@font/inter_semibold"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:layout_constraintTop_toBottomOf="@+id/btnDontUninstall"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clAd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray01"
+        android:padding="@dimen/_5sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <FrameLayout
+            android:id="@+id/shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <include
+                android:id="@+id/shimmer_container_native"
+                layout="@layout/layout_loading_ads_native_small" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/nativeAdView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

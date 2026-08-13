@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="modelFilters"
+            type="com.aiface.aging.features.filters.model.ModelFilters" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:onClick="@{clickListener}">
+
+        <TextView
+            android:id="@+id/frame_head_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter_medium"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_8sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:textSize="@dimen/_11ssp"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingLeft="@dimen/_8sdp"
+            android:text="@{modelFilters.title}"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+</layout>

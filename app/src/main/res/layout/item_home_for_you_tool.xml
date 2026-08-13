@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Customize each For You tool card here (size, radius, title style, etc.). -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingEnd="8dp"
+    tools:ignore="RtlSymmetry">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivForYouTool"
+        android:layout_width="94dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="426:570"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:shapeAppearanceOverlay="@style/RoundedImage16"
+        tools:src="@drawable/aging_home" />
+
+    <TextView
+        android:id="@+id/tvForYouToolTitle"
+        android:layout_width="92dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="2"
+        android:paddingVertical="@dimen/_3sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bottom_rounded"
+        app:layout_constraintBottom_toBottomOf="@+id/ivForYouTool"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        tools:text="AI Aging" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

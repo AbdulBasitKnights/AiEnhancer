@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="modelStickerHeader"
+            type="com.aiface.aging.features.filters.model.ModelStickerHeader" />
+
+        <variable
+            name="activity"
+            type="androidx.fragment.app.FragmentActivity" />
+
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:onClick="@{clickListener}">
+
+        <RelativeLayout
+            android:id="@+id/rootLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="@dimen/_7sdp"
+            android:clipChildren="false">
+
+            <TextView
+                android:id="@+id/frame_head_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/inter_medium"
+                android:gravity="center"
+                android:maxLines="1"
+               tools:text="Love"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@{modelStickerHeader.title}"
+                android:textSize="@dimen/_11ssp"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/tagImage"
+                android:layout_width="@dimen/_13sdp"
+                android:layout_height="@dimen/_13sdp"
+                android:layout_marginLeft="-14dp"
+                android:layout_marginTop="-7dp"
+                android:layout_toRightOf="@id/frame_head_txt"
+                android:adjustViewBounds="true"
+                android:clickable="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="@id/frame_head_txt"
+                />
+        </RelativeLayout>
+    </FrameLayout>
+
+</layout>

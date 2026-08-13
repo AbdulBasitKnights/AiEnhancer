@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:id="@+id/li_done"
+    android:visibility="gone"
+    android:background="@color/bgColor"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_45sdp">
+    <!--android:layout_height="@dimen/_35sdp"-->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/img_close_text"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_cross"
+                app:tint="@color/icon_primary" />
+            <!--android:src="@drawable/ic_cancel"-->
+
+            <TextView
+                android:fontFamily="@font/inter_semibold"
+                android:textColor="@color/text_primary"
+                android:gravity="center"
+                android:id="@+id/txt_selected_title"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Confirm Editing"
+                android:layout_toStartOf="@+id/img_done_text"
+                android:layout_toEndOf="@+id/img_close_text" />
+
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/img_done_text"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingStart="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_done"
+                android:layout_alignParentEnd="true"
+                app:tint="@color/primaryColor" />
+            <!--android:src="@drawable/ic_tick"-->
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

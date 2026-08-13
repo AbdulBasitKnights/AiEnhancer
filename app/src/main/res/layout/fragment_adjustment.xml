@@ -1,0 +1,74 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/bg_editor">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/cross"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:src="@drawable/ic_cross"/>
+
+            <TextView
+                android:id="@+id/headingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:text="Adjust"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:textSize="@dimen/_11ssp"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/inter_medium"/>
+
+            <ImageView
+                android:id="@+id/tick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_tick_24"/>
+        </RelativeLayout>
+
+        <com.xw.repo.BubbleSeekBar
+            android:id="@+id/progressSeekBar"
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:visibility="visible"
+            app:bsb_hide_bubble="true"
+            app:bsb_second_track_color="@color/colorHighlightBlueDark"
+            app:bsb_section_count="1"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:bsb_show_section_mark="true"
+            app:bsb_show_section_text="false"
+            app:bsb_thumb_color="@color/colorHighlightBlueDark"
+            app:bsb_track_color="@color/gray"
+            app:bsb_track_size="@dimen/_1sdp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/adjustmentRecyclerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_ratio" />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:paddingTop="@dimen/_6sdp"
+    android:paddingBottom="@dimen/_6sdp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/_15sdp">
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/root_layout"
+        android:paddingLeft="@dimen/_5sdp"
+        android:paddingRight="@dimen/_5sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp">
+
+            <ImageView
+                android:gravity="center"
+                android:id="@+id/item_icon"
+                android:padding="@dimen/_5sdp"
+                android:layout_width="@dimen/_34sdp"
+                android:layout_height="@dimen/_34sdp"
+                app:tint="@color/icon_primary" />
+        </LinearLayout>
+
+        <TextView
+            android:textSize="@dimen/_8ssp"
+            android:textColor="@color/text_secondary"
+            android:gravity="center"
+            android:fontFamily="@font/inter_regular"
+            android:layout_gravity="center"
+            android:id="@+id/txt_itemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Eyes" />
+    </LinearLayout>
+</LinearLayout>

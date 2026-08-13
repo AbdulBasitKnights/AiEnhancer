@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.aiface.aging.features.imgpicker.builder.type.ButtonGravity" />
+
+        <import type="com.aiface.aging.features.imgpicker.util.TextFormatUtil" />
+
+        <variable
+            name="selectedAlbum"
+            type="com.aiface.aging.features.imgpicker.model.Album" />
+
+        <variable
+            name="buttonGravity"
+            type="ButtonGravity" />
+
+        <variable
+            name="showButton"
+            type="boolean" />
+
+        <variable
+            name="buttonText"
+            type="String" />
+
+        <variable
+            name="buttonBackground"
+            type="Integer" />
+
+        <variable
+            name="buttonTextColor"
+            type="Integer" />
+
+        <variable
+            name="buttonDrawableOnly"
+            type="boolean" />
+
+        <variable
+            name="isAlbumOpened"
+            type="boolean" />
+
+        <variable
+            name="imageCountFormat"
+            type="String" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@color/lineColor" />
+
+        <LinearLayout
+            android:id="@+id/dataView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/viewLine"
+            android:orientation="vertical"
+            android:background="@color/bgColor"
+            android:visibility="visible">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <!--<androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/view_bottom"
+                    style="@style/backgroundWhiteToBlack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:elevation="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+
+                    <include
+                        android:id="@+id/view_done_bottom"
+                        layout="@layout/layout_done_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/default_padding_small"
+                        android:visibility="@{showButton &amp;&amp; buttonGravity == ButtonGravity.BOTTOM ? View.VISIBLE : View.GONE}"
+                        app:background="@{buttonBackground}"
+                        app:buttonDrawableOnly="@{buttonDrawableOnly}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:text="@{buttonText}"
+                        app:textColor="@{buttonTextColor}" />
+
+
+                    <LinearLayout
+                        android:id="@+id/view_selected_album"
+                        android:layout_width="@dimen/ted_image_picker_album_width"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/list_item_container_padding"
+                        android:visibility="@{selectedAlbum != null}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            style="@style/appIconTintColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_menu" />
+
+                        <TextView
+                            style="@style/appTextColor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_padding_small"
+                            android:ellipsize="end"
+                            android:maxWidth="@dimen/ted_image_picker_album_text_max_width"
+                            android:maxLines="1"
+                            android:text="@{selectedAlbum.name}"
+                            tools:text="ALL" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Subhead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/default_padding_small"
+                            android:maxLines="1"
+                            android:text="@{TextFormatUtil.getMediaCountText(imageCountFormat,selectedAlbum.mediaUris.size())}"
+                            android:textColor="@color/ted_image_picker_primary"
+                            tools:text="40" />
+
+
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_album_drop_down"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:elevation="4dp"
+                    android:orientation="vertical"
+                    android:overScrollMode="never"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:spanCount="3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0"
+                    tools:listitem="@layout/item_album" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/permission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/folder_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_gallery_permission"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.2"
+                app:tint="@color/primaryColor" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_40sdp"
+                android:gravity="center"
+                android:textColor="@color/text_primary"
+                android:fontFamily="@font/urbanist_medium"
+                android:text="@string/needs_gallery_permission_for_images"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="@+id/folder_icon"
+                app:layout_constraintStart_toStartOf="@+id/folder_icon"
+                app:layout_constraintTop_toBottomOf="@+id/folder_icon" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/allow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_30sdp"
+                android:background="@drawable/rounded_filled_dark_blue"
+                android:fontFamily="@font/urbanist_medium"
+                android:text="Allow Access"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+</layout>

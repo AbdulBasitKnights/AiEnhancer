@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission
+        android:name="android.permission.READ_MEDIA_IMAGES" android:required="true" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
+
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- Package visibility for result-screen social share targets (API 30+). -->
+    <queries>
+        <package android:name="com.facebook.katana" />
+        <package android:name="com.whatsapp" />
+        <package android:name="com.instagram.android" />
+        <package android:name="com.zhiliaoapp.musically" />
+        <package android:name="com.ss.android.ugc.trill" />
+    </queries>
+
+    <application
+        android:name=".AiFaceApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ProCapture">
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            tools:ignore="DiscouragedApi">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".features.bgremover.BGRemoverActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            android:windowSoftInputMode="adjustNothing"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.eraser.MagicEraserActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            android:windowSoftInputMode="adjustNothing"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.look.LookFeatureActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.frames.editor.AllFramesEditorActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            android:theme="@style/AppTheme"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.blender.editor.BlendActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            android:theme="@style/AppTheme"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.blender.PhotoBlenderActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            android:theme="@style/AppTheme"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.iap.IAPActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            android:theme="@style/AppTheme"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.survey.SurveyActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            android:theme="@style/AppTheme"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.language.LanguageActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            tools:ignore="DiscouragedApi"
+            android:exported="false" />
+        <activity
+            android:name=".features.onboard.OnboardingActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            tools:ignore="DiscouragedApi"
+            android:exported="false" />
+        <activity
+            android:name=".features.fullonboard.FullOnboardActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.permission.PermissionActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            tools:ignore="DiscouragedApi"
+            android:exported="false" />
+        <activity
+            android:name=".features.exit.ExitActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            android:theme="@style/AppTheme"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.collage.dynamic.PuzzleCollageViewActivity"
+            android:label="COLLAGE PUZZLE"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            android:windowSoftInputMode="adjustNothing"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.collage.static_.GridPhotoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing"
+            tools:ignore="DiscouragedApi" />
+
+        <activity
+            android:name=".features.body.activities.ImageEditingER"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.editor.EditorActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            android:windowSoftInputMode="adjustNothing"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.result.ResultHostActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.share.ShareImageActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.uninstall.UninstallActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            tools:ignore="DiscouragedApi" />
+        <activity
+            android:name=".features.noti.LockScreenActivity"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:configChanges="uiMode"
+            android:showOnLockScreen="true"
+            android:showWhenLocked="true"
+            android:theme="@style/Theme.Lockscreen"
+            android:turnScreenOn="true"
+            tools:ignore="DiscouragedApi" />
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-5972202469838280~6432133240" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="fcm_default_channel" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/splash_logo" />
+
+        <service
+            android:name=".features.noti.FcmMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="996493839636798" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="ba22672ebf1728275170571ffc0b9c4f" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <provider
+            android:name=".shared.ImageSharingFileProvider"
+            android:authorities="${applicationId}.myfileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/image_picker_provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

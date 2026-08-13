@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="frameHeader"
+            type="com.aiface.aging.features.collage.model.ModelFrameHomeCategories" />
+    </data>
+
+        <TextView
+            android:onClick="@{clickListener}"
+            android:id="@+id/frame_head_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_5sdp"
+            android:layout_marginHorizontal="@dimen/_3sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:ellipsize="end"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingEnd="@dimen/_15sdp"
+            android:text="@{frameHeader.title}"
+            tools:text="Text"
+            android:textSize="@dimen/_11ssp"
+            android:visibility="visible" />
+
+</layout>

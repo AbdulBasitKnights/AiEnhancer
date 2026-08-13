@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="@dimen/_2sdp">
+
+    <FrameLayout
+        android:id="@+id/bonusCell"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_48sdp"
+        android:background="@drawable/bg_checkin_day_locked_wide">
+
+        <LinearLayout
+            android:id="@+id/groupCoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginHorizontal="@dimen/_2sdp"
+                android:contentDescription="@null"
+                android:background="@drawable/bg_checkin_badge_claimed"
+                android:src="@drawable/ic_credits_white" />
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginHorizontal="@dimen/_2sdp"
+                android:contentDescription="@null"
+                android:background="@drawable/bg_checkin_badge_claimed"
+                android:src="@drawable/ic_credits_white" />
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginHorizontal="@dimen/_2sdp"
+                android:contentDescription="@null"
+                android:background="@drawable/bg_checkin_badge_claimed"
+                android:src="@drawable/ic_credits_white" />
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginHorizontal="@dimen/_2sdp"
+                android:contentDescription="@null"
+                android:background="@drawable/bg_checkin_badge_claimed"
+                android:src="@drawable/ic_credits_white" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivBonusCheck"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_checkin_badge_claimed"
+            android:contentDescription="@null"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_checkin_check"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvDayLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:fontFamily="@font/inter_medium"
+        android:textColor="@color/text_secondary"
+        android:textSize="@dimen/_10ssp"
+        tools:text="Day 7" />
+
+</LinearLayout>

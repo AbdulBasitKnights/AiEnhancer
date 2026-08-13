@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.libraries.ads.mobile.sdk.nativead.NativeAdView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nativeAdView"
+    android:layout_width="110dp"
+    android:layout_height="160dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/bg_rounded_cl_white"
+    android:backgroundTint="@color/grey12"
+    android:paddingHorizontal="5dp"
+    android:paddingVertical="6dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ad_app_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_4sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/ad_headline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintTop_toBottomOf="@id/ad_app_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Title of the ad"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:fontFamily="@font/inter_semibold"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/ad_body"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textColor="@color/black"
+            android:text="Body of the ad"
+            app:layout_constraintTop_toBottomOf="@id/ad_headline"
+            app:layout_constraintBottom_toTopOf="@id/ad_call_to_action"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="11sp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:gravity="center"
+            android:fontFamily="@font/inter_regular"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="4dp" />
+
+        <Button
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/ad_call_to_action"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_32sdp"
+            android:text="Install"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginTop="8dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.libraries.ads.mobile.sdk.nativead.NativeAdView>

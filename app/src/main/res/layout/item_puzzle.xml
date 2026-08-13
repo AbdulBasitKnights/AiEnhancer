@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    android:elevation="@dimen/_5sdp"
+    android:orientation="vertical">
+
+    <com.aiface.aging.features.collage.dynamic.puzzle.SquarePuzzleView
+        android:id="@+id/puzzle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/grid_column_width"
+        android:background="#E6E6E6"
+        android:visibility="gone"
+        android:padding="14dp" />
+
+    <ImageView
+        android:id="@+id/thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/grid_column_width" />
+</FrameLayout>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.aiface.aging.R" />
+
+        <variable
+            name="viewModel"
+            type="com.aiface.aging.features.filters.ViewModelFilters" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/bg_editor">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_3sdp">
+
+            <ImageView
+                android:id="@+id/cross"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginStart="@dimen/_7sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_cross" />
+
+            <TextView
+                android:id="@+id/headingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Basic"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/inter_medium"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/_11ssp" />
+
+            <ImageView
+                android:id="@+id/tick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:layout_marginEnd="@dimen/_7sdp"
+                android:src="@drawable/ic_tick_24" />
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_125sdp">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/headersRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:clipToPadding="false"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_sticker_header" />
+
+            <View
+                android:id="@+id/viewLine1"
+                android:layout_width="match_parent"
+                android:layout_height=".1dp"
+                android:background="#757575"
+                app:layout_constraintTop_toBottomOf="@id/headersRecycler"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_below="@id/headersRecycler" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/packsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headersRecycler"
+                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/viewLine1"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_sticker_pack" />
+
+            <TextView
+                android:id="@+id/textLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headersRecycler"
+                android:layout_centerHorizontal="true"
+                app:layout_constraintTop_toBottomOf="@id/headersRecycler"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:fontFamily="@font/inter_semibold"
+                android:textColor="@color/text_primary"
+                android:text="Loading filters..."
+                android:textSize="@dimen/_11ssp"
+                />
+
+            <TextView
+                android:id="@+id/textNoInternet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/headersRecycler"
+                android:layout_centerHorizontal="true"
+                app:layout_constraintTop_toBottomOf="@id/headersRecycler"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/white"
+                android:fontFamily="@font/inter_semibold"
+                android:text="No internet connection"
+                android:textSize="@dimen/_12ssp"
+                android:visibility="gone" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>
